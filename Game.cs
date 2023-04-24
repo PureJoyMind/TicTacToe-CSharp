@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace TicTacToe
 {
@@ -23,6 +25,7 @@ namespace TicTacToe
             while (!gameIsOver)
             {
                 // Display the current state of the game board
+                Console.Clear();
                 _board.DisplayBoard();
 
                 // Get the current player's move
@@ -34,14 +37,16 @@ namespace TicTacToe
                 var isValidMove = _board.UpdateBoard(move, CurrentPlayer.Symbol);
                 if (!isValidMove)
                 {
-                    Console.Clear();
+                    //Console.Clear();
                     Console.WriteLine("Invalid move. Please try again.");
+                    Thread.Sleep(1000);
                     continue;
                 }
 
                 // Check if the game is over
                 if (!_board.IsGameOver()) continue;
                 gameIsOver = true;
+                Console.Clear();
                 Console.WriteLine("Game over!");
                 _board.DisplayBoard();
                 Console.WriteLine($"{CurrentPlayer.Name} wins!");

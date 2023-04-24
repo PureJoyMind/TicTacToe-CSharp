@@ -42,11 +42,11 @@ namespace TicTacToe
                 //{
                 //Console.SetCursorPosition(0, i);
                 //}
-                Console.WriteLine($" {_spaces[0]} | {_spaces[1]} | {_spaces[2]} ");
-                Console.WriteLine("---+---+---");
-                Console.WriteLine($" {_spaces[3]} | {_spaces[4]} | {_spaces[5]} ");
-                Console.WriteLine("---+---+---");
-                Console.WriteLine($" {_spaces[6]} | {_spaces[7]} | {_spaces[8]} ");
+                Console.WriteLine($"      {_spaces[0]} | {_spaces[1]} | {_spaces[2]} ");
+                Console.WriteLine("     ---+---+---");
+                Console.WriteLine($"      {_spaces[3]} | {_spaces[4]} | {_spaces[5]} ");
+                Console.WriteLine("     ---+---+---");
+                Console.WriteLine($"      {_spaces[6]} | {_spaces[7]} | {_spaces[8]} ");
                 //Console.Clear();
             }
 
