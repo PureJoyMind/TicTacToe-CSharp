@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System;
 
 namespace TicTacToe
 {
@@ -10,6 +7,10 @@ namespace TicTacToe
     {
         static void Main(string[] args)
         {
+            // start the game
+            Game game = new Game();
+            game.StartGame();
+
         }
     }
 }

@@ -4,7 +4,7 @@ namespace TicTacToe
 {
     public class Game
     {
-        public Player CurrentPlayer;
+        public Player currentPlayer { get; set;  }
 
         public void StartGame()
         {
@@ -26,7 +26,7 @@ namespace TicTacToe
                 board.DisplayBoard();
 
                 // Get the current player's move
-                Player currentPlayer = (board.NumMoves % 2 == 0) ? player1 : player2;
+                currentPlayer = (board.NumMoves % 2 == 0) ? player1 : player2;
                 Console.WriteLine($"{currentPlayer.Name}, it's your turn. Please select a space on the board:");
                 int move = Convert.ToInt32(Console.ReadLine());
 
@@ -49,20 +49,5 @@ namespace TicTacToe
                 }
             }
         }
-
-        public void EndGame(string winner)
-        {
-            Console.WriteLine("Game over!");
-            if (winner == null)
-            {
-                Console.WriteLine("It's a tie!");
-            }
-            else
-            {
-                Console.WriteLine($"{winner} wins!");
-            }
-        }
-
-
     }
 }

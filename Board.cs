@@ -4,9 +4,18 @@ namespace TicTacToe
 {
     public class Board
     {
-        private string[] spaces = new string[9] { " ", " ", " ", " ", " ", " ", " ", " ", " " };
+        private string[] spaces;
 
         public int NumMoves;
+
+        public Board()
+        {
+            this.spaces = new string[9];
+            for (int i = 0; i < spaces.Length; i++)
+            {
+                spaces[i] = " ";
+            }
+        }
 
         public bool UpdateBoard(int move, string symbol)
         {
