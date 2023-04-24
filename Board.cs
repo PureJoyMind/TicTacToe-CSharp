@@ -22,6 +22,7 @@ namespace TicTacToe
 
             public bool UpdateBoard(int move, string symbol)
             {
+
                 if (move < 1 || move > 9)
                 {
                     return false;

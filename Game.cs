@@ -21,7 +21,6 @@ namespace TicTacToe
         public void StartGame()
         {
             var gameIsOver = false;
-
             while (!gameIsOver)
             {
                 // Display the current state of the game board
@@ -31,7 +30,17 @@ namespace TicTacToe
                 // Get the current player's move
                 CurrentPlayer = (_board.NumMoves % 2 == 0) ? _player1 : _player2;
                 Console.WriteLine($"{CurrentPlayer.Name}, it's your turn. Please select a space on the board:");
-                var move = Convert.ToInt32(Console.ReadLine());
+                int move;
+                try
+                {
+                    move = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Thread.Sleep(1000);
+                    continue;
+                }
 
                 // Make the move
                 var isValidMove = _board.UpdateBoard(move, CurrentPlayer.Symbol);
