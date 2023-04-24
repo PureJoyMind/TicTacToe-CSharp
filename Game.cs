@@ -58,8 +58,26 @@ namespace TicTacToe
                 Console.Clear();
                 Console.WriteLine("Game over!");
                 _board.DisplayBoard();
+                CurrentPlayer.Won++;
                 Console.WriteLine($"{CurrentPlayer.Name} wins!");
+                Thread.Sleep(3000);
                 break;
+            }
+
+            // Replay
+            //Console.Clear();
+            //Console.WriteLine("What do you want to do?");
+            //Console.WriteLine("1. Show Stats");
+            //Console.WriteLine("2. Play again");
+            //Console.WriteLine("3. Quit");
+        }
+
+        private void ShowStats(params Player[] players)
+        {
+            var i = 1;
+            foreach (Player player in players)
+            {
+                Console.WriteLine($"{i}. {player.Name}: {player.Won}");
             }
         }
     }
