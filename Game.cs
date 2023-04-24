@@ -11,11 +11,11 @@ namespace TicTacToe
             Console.WriteLine("Welcome to Tic Tac Toe!");
             Console.WriteLine("Player 1, please enter your name:");
             string player1Name = Console.ReadLine();
-            Player player1 = new Player(player1Name, 'X');
+            Player player1 = new Player(player1Name, "X");
 
             Console.WriteLine("Player 2, please enter your name:");
             string player2Name = Console.ReadLine();
-            Player player2 = new Player(player2Name, 'O');
+            Player player2 = new Player(player2Name, "O");
 
             Board board = new Board();
             bool gameIsOver = false;
@@ -49,6 +49,20 @@ namespace TicTacToe
                 }
             }
         }
+
+        public void EndGame(string winner)
+        {
+            Console.WriteLine("Game over!");
+            if (winner == null)
+            {
+                Console.WriteLine("It's a tie!");
+            }
+            else
+            {
+                Console.WriteLine($"{winner} wins!");
+            }
+        }
+
 
     }
 }
