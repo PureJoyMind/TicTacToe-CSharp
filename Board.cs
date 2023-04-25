@@ -9,7 +9,7 @@ namespace TicTacToe
             private readonly string[] _spaces;
 
             //public int NumMoves;
-            public int NumMoves { get; private set; }
+            public int NumMoves { get; set; }
 
             public Board()
             {
@@ -92,12 +92,13 @@ namespace TicTacToe
                 return true;
             }
 
-            private static void ClearCurrentConsoleLine()
+            public void ClearBoard()
             {
-                int currentLineCursor = Console.CursorTop;
-                Console.SetCursorPosition(0, Console.CursorTop);
-                Console.Write(new string(' ', Console.WindowWidth));
-                Console.SetCursorPosition(0, currentLineCursor);
+                //_spaces = new string[9];
+                for (int i = 0; i < _spaces.Length; i++)
+                {
+                    _spaces[i] = " ";
+                }
             }
 
 

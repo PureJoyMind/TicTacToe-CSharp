@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Threading;
 
 namespace TicTacToe
 {
@@ -22,6 +23,41 @@ namespace TicTacToe
             Game game = new Game(player1, player2);
             game.StartGame();
 
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("What do you want to do?");
+                Console.WriteLine("1. Show Stats");
+                Console.WriteLine("2. Play again");
+                Console.WriteLine("3. Quit");
+                char answer;
+                try
+                {
+                    answer = Convert.ToChar(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Thread.Sleep(3000);
+                    continue;
+                }
+                switch (answer)
+                {
+                    case '1':
+                        game.ShowStats(player1, player2);
+                        break;
+                    case '2':
+                        game.StartGame();
+                        break;
+                    case '3':
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input.");
+                        Thread.Sleep(3000);
+                        break;
+                }
+            }
         }
     }
 }
