@@ -1,6 +1,6 @@
 # TicTacToe
 A simple game of Tic Tac Toe.
-Game Feaature:
+Game Features:
 * Menu after the first game
 * Saving game status for the players during that session
 * Quitting game
